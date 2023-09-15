@@ -22,10 +22,7 @@ const routes = createBrowserRouter(
         },
       ],
     },
-  ],
-  {
-    basename: "/galleria-jade.vercel.app/",
-  }
+  ]
 );
 
 ReactDOM.render(
