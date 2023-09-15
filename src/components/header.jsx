@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "../../assets/shared/logo.svg";
+import logo from "../shared/logo.svg";
 export default function Header({first}) {
   return (
     <header className="border-b-[1px] border-brand-2 py-[24px]">

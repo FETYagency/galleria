@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import next from "../../assets/shared/icon-next-button.svg";
-import back from "../../assets/shared/icon-back-button.svg";
+import next from "../shared/icon-next-button.svg";
+import back from "../shared/icon-back-button.svg";
 export default function Controller({ name, artist, urls }) {
   useEffect(() => {
     let value = ((urls.number + 1) * 100) / urls.totale;

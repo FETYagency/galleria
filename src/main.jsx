@@ -8,20 +8,25 @@ import Article, { loader as articleLoader } from "./layouts/article";
 
 import "./index.css";
 
-const routes = createBrowserRouter([
+const routes = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <Root />,
+      children: [
+        { index: true, element: <Gallery /> },
+        {
+          path: "/:articleName",
+          element: <Article />,
+          loader: articleLoader,
+        },
+      ],
+    },
+  ],
   {
-    path: "/",
-    element: <Root />,
-    children: [
-      { index: true, element: <Gallery /> },
-      {
-        path: "/:articleName",
-        element: <Article />,
-        loader: articleLoader,
-      },
-    ],
-  },
-]);
+    basename: "/galleria/",
+  }
+);
 
 ReactDOM.render(
   <React.StrictMode>

@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import articles from "../contexts/articlesProvider";
 import View from "../components/view";
-import max from "../../assets/shared/icon-view-image.svg";
+import max from "../shared/icon-view-image.svg";
 import Controller from "../components/controller";
 export function loader({ params }) {
   return params.articleName;
