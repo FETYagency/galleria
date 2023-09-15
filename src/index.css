@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Roboto&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --clr1: theme(colors.brand.0);
+    --clr2: theme(colors.brand.2);
+    --contrast: 50%;
+  }
+}
+@layer components {
+  .layout {
+    inline-size: min(375px, 95%);
+    margin-inline: auto;
+  }
+  .layout-md {
+    inline-size: min(768px, 95%);
+    margin-inline: auto;
+  }
+  .layout-xl {
+    inline-size: min(1440px, 95%);
+    margin-inline: auto;
+  }
+  .thumb-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+  .tracker {
+    background: linear-gradient(
+      90deg,
+      var(--clr1) var(--contrast),
+      var(--clr2) var(--contrast)
+    );
+  }
+}
