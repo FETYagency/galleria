@@ -24,7 +24,7 @@ const routes = createBrowserRouter(
     },
   ],
   {
-    basename: "/galleria/",
+    basename: "/galleria-jade.vercel.app/",
   }
 );
 
