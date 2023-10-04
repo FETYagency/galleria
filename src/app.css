@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  :root {
+    --clr1: #000;
+    --clr2: #e5e5e5;
+    --contrast: 50%;
+  }
+}
+@layer components {
+  .tracker {
+    background: linear-gradient(
+      90deg,
+      var(--clr1) var(--contrast),
+      var(--clr2) var(--contrast)
+    );
+  }
+}

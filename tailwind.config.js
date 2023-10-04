@@ -1,18 +1,22 @@
-module.exports = {
-  content: ["index.html", "./src/**/*.{js,jsx,ts,tsx,vue,html}"],
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ["./src/**/*.{html,js,jsx}"],
   theme: {
     extend: {
-      colors: {
-        brand: {
-          0: "#000",
-          1: "#7D7D7D",
-          2: "#E5E5E5",
-          3: "#F3F3F3",
-          4: "#FFFFFF",
+      fontFamily: {
+        design: "'Libre Baskerville', 'serif'",
+      },
+      keyframes: {
+        bouncy: {
+          "0%": { transform: "translateY(0px)" },
+          "25%": { transform: "translateY(-30px)" },
+          "50%": { transform: "translateY(0px)" },
+          "75%": { transform: "translateY(-15px)" },
+          "100%": { transform: "translateY(0px)" },
         },
       },
-      fontFamily: {
-        brand: ["Libre Baskerville", "serif"],
+      animation: {
+        bouncy: "bouncy 2s ease-in infinite alternate",
       },
     },
   },

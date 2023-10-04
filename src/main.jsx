@@ -1,33 +1,30 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "./app.css";
+import Root from "./pages/root";
+import { DataProvider } from "./services/provider/dataProvider";
+import Gallery from "./pages/masonaryGalleryPage";
+import Art, { loader as artLoader } from "./pages/articlePage";
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root />,
+    children: [
+      { index: true, element: <Gallery /> },
+      {
+        path: "/:id",
+        element: <Art />,
+        loader: artLoader,
+      },
+    ],
+  },
+]);
 
-import Root from "./routes/root";
-import Gallery from "./layouts/gallery";
-import Article, { loader as articleLoader } from "./layouts/article";
-
-import "./index.css";
-
-const routes = createBrowserRouter(
-  [
-    {
-      path: "/",
-      element: <Root />,
-      children: [
-        { index: true, element: <Gallery /> },
-        {
-          path: "/:articleName",
-          element: <Article />,
-          loader: articleLoader,
-        },
-      ],
-    },
-  ]
-);
-
-ReactDOM.render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={routes} />
+    <DataProvider>
+      <RouterProvider router={router} />
+    </DataProvider>
   </React.StrictMode>,
-  document.getElementById("root")
 );
